@@ -59,7 +59,7 @@ const App = () => {
   const [breakActive, setBreakActive] = useState(false);
 
   useEffect(() => {
-    if (timeLeft === 0) {
+    if (timeLeft < 0) {
       let audio = document.getElementById("beep");
       audio.play();
       breakActive ? setTimeLeft(counters.session * 60) : setTimeLeft(counters.break * 60);
